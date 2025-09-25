@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Instagram, Music, Facebook, XIcon, ChevronDown } from "lucide-react"
+import { Instagram, Music, Facebook, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 const TikTokIcon = () => (
@@ -20,7 +20,7 @@ const XIcon = () => (
 export default function BullemsyncLanding() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [waitlistCount, setWaitlistCount] = useState(4200)
-  const [activePads, setActivePads] = useState([])
+  const [activePads, setActivePads] = useState<number[]>([])
   const [puzzleUnlocked, setPuzzleUnlocked] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
@@ -47,28 +47,27 @@ export default function BullemsyncLanding() {
   ]
 
   const faqs = [
-  {
-    q: "What is Bullemsync?",
-    a: "Bullemsync is a next-gen music streaming and trading platform where songs are assets you can stream, trade, and earn from.",
-  },
-  {
-    q: "How do I earn as a listener?",
-    a: "Listeners earn BST tokens for the time they spend streaming music. Every minute pays you back with 0.05 $BST.",
-  },
-  {
-    q: "What’s special for artists?",
-    a: "Artists earn not just from streams but also trading commissions whenever their tracks are bought or sold.",
-  },
-  {
-    q: "Can I trade songs like crypto?",
-    a: "Yes! Songs on Bullemsync can be traded like digital assets, allowing you to buy, hold, and resell tracks for profit.",
-  },
-  {
-    q: "What is BST?",
-    a: "BST (Bullemsync Token) is our in-app currency powering streams, trades, and rewards.",
-  },
-]
-
+    {
+      q: "What is Bullemsync?",
+      a: "Bullemsync is a next-gen music streaming and trading platform where songs are assets you can stream, trade, and earn from.",
+    },
+    {
+      q: "How do I earn as a listener?",
+      a: "Listeners earn BST tokens for the time they spend streaming music. Every minute pays you back with 0.05 $BST.",
+    },
+    {
+      q: "What's special for artists?",
+      a: "Artists earn not just from streams but also trading commissions whenever their tracks are bought or sold.",
+    },
+    {
+      q: "Can I trade songs like crypto?",
+      a: "Yes! Songs on Bullemsync can be traded like digital assets, allowing you to buy, hold, and resell tracks for profit.",
+    },
+    {
+      q: "What is BST?",
+      a: "BST (Bullemsync Token) is our in-app currency powering streams, trades, and rewards.",
+    },
+  ]
 
   useEffect(() => {
     setIsLoaded(true)
@@ -78,7 +77,7 @@ export default function BullemsyncLanding() {
     return () => clearInterval(interval)
   }, [])
 
-  const handlePadClick = (padIndex) => {
+  const handlePadClick = (padIndex: number) => {
     const newActivePads = [...activePads, padIndex]
     setActivePads(newActivePads)
 
@@ -90,11 +89,22 @@ export default function BullemsyncLanding() {
     }
   }
 
-  const handleSlideClick = (index) => {
+  const handleSlideClick = (index: number) => {
     setCurrentSlide(index)
     const container = document.querySelector(".slider-container")
     if (container) {
       container.scrollLeft = index * container.clientWidth
+    }
+  }
+
+  const handleFAQScroll = (direction: "left" | "right") => {
+    const container = document.querySelector(".faq-slider") as HTMLElement
+    if (container) {
+      const scrollAmount = container.clientWidth
+      container.scrollBy({ 
+        left: direction === "left" ? -scrollAmount : scrollAmount, 
+        behavior: "smooth" 
+      })
     }
   }
 
@@ -281,7 +291,9 @@ export default function BullemsyncLanding() {
               {aboutSlides.map((_, index) => (
                 <button
                   key={index}
-                  className={`slider-dot ${index === currentSlide ? "active" : ""}`}
+                  className={`slider-dot w-3 h-3 rounded-full mx-1 transition-colors ${
+                    index === currentSlide ? "bg-primary" : "bg-primary/30"
+                  }`}
                   onClick={() => handleSlideClick(index)}
                 />
               ))}
@@ -373,7 +385,7 @@ export default function BullemsyncLanding() {
         </div>
       </section>
 
-        {/* FAQ Section */}
+      {/* FAQ Section */}
       <section className="py-20 px-4 bg-background/95 section-bg-7">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-primary animate-neon-pulse">
@@ -383,10 +395,7 @@ export default function BullemsyncLanding() {
           <div className="relative">
             {/* Left arrow */}
             <button
-              onClick={() => {
-                const container = document.querySelector(".faq-slider") as HTMLElement
-                if (container) container.scrollBy({ left: -container.clientWidth, behavior: "smooth" })
-              }}
+              onClick={() => handleFAQScroll("left")}
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-primary/20 rounded-full hover:bg-primary/40 transition"
             >
               ◀
@@ -424,10 +433,7 @@ export default function BullemsyncLanding() {
 
             {/* Right arrow */}
             <button
-              onClick={() => {
-                const container = document.querySelector(".faq-slider") as HTMLElement
-                if (container) container.scrollBy({ left: container.clientWidth, behavior: "smooth" })
-              }}
+              onClick={() => handleFAQScroll("right")}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-primary/20 rounded-full hover:bg-primary/40 transition"
             >
               ▶
@@ -441,7 +447,6 @@ export default function BullemsyncLanding() {
           </div>
         </div>
       </section>
-
 
       {/* Footer */}
       <footer className="py-12 px-4 border-t border-primary/20 bg-transparent">
