@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Instagram, Music, Facebook } from "lucide-react"
+import { Instagram, Music, Facebook, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 const TikTokIcon = () => (
@@ -23,6 +23,7 @@ export default function BullemsyncLanding() {
   const [activePads, setActivePads] = useState([])
   const [puzzleUnlocked, setPuzzleUnlocked] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
   const aboutSlides = [
     {
@@ -44,6 +45,30 @@ export default function BullemsyncLanding() {
         "Your playlists now pay you back. Curate, share, and monetize your taste while enjoying ad-free streaming, offline playback, and the world's first OPC Energy-Powered System for smooth performance anywhere.",
     },
   ]
+
+  const faqs = [
+  {
+    q: "What is Bullemsync?",
+    a: "Bullemsync is a next-gen music streaming and trading platform where songs are assets you can stream, trade, and earn from.",
+  },
+  {
+    q: "How do I earn as a listener?",
+    a: "Listeners earn BST tokens for the time they spend streaming music. Every minute pays you back with 0.05 $BST.",
+  },
+  {
+    q: "What’s special for artists?",
+    a: "Artists earn not just from streams but also trading commissions whenever their tracks are bought or sold.",
+  },
+  {
+    q: "Can I trade songs like crypto?",
+    a: "Yes! Songs on Bullemsync can be traded like digital assets, allowing you to buy, hold, and resell tracks for profit.",
+  },
+  {
+    q: "What is BST?",
+    a: "BST (Bullemsync Token) is our in-app currency powering streams, trades, and rewards.",
+  },
+]
+
 
   useEffect(() => {
     setIsLoaded(true)
@@ -127,7 +152,7 @@ export default function BullemsyncLanding() {
             <p
               className={`text-lg sm:text-2xl md:text-4xl font-light transition-all duration-1000 delay-500 text-balance ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
             >
-              Bullemsync: we're ready to turn sound into assets<span className="text-primary">...</span>
+               We're about to turn sound into assets<span className="text-primary">...</span>
             </p>
             <p
               className={`text-lg sm:text-2xl md:text-4xl font-light transition-all duration-1000 delay-1000 text-balance ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -271,7 +296,7 @@ export default function BullemsyncLanding() {
             <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">
               The future of music tech isn't coming — it's already here.
             </p>
-            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">✨ Bullemsync: Stream. Trade. Earn.</p>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">✨  Stream. Trade. Earn.</p>
           </div>
         </div>
       </section>
@@ -347,6 +372,76 @@ export default function BullemsyncLanding() {
           )}
         </div>
       </section>
+
+        {/* FAQ Section */}
+      <section className="py-20 px-4 bg-background/95 section-bg-7">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-primary animate-neon-pulse">
+            ❓ Cosmic FAQ: Decode the Bullemsync Universe
+          </h3>
+
+          <div className="relative">
+            {/* Left arrow */}
+            <button
+              onClick={() => {
+                const container = document.querySelector(".faq-slider") as HTMLElement
+                if (container) container.scrollBy({ left: -container.clientWidth, behavior: "smooth" })
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-primary/20 rounded-full hover:bg-primary/40 transition"
+            >
+              ◀
+            </button>
+
+            {/* FAQ cards slider */}
+            <div
+              className="faq-slider flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-6 px-8"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className={`flex-shrink-0 w-[85%] sm:w-[45%] md:w-[30%] snap-center rounded-2xl border-2 border-accent/40 bg-card/80 backdrop-blur-lg shadow-lg p-6 transition-all duration-300 cursor-pointer ${
+                    openFAQ === i ? "bg-primary/10 shadow-xl scale-[1.03]" : "hover:bg-primary/5"
+                  }`}
+                  onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
+                >
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-lg sm:text-xl font-semibold text-accent text-left">
+                      {faq.q}
+                    </h4>
+                    <ChevronDown
+                      className={`w-6 h-6 text-primary transition-transform ${
+                        openFAQ === i ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+                  {openFAQ === i && (
+                    <p className="mt-4 text-foreground animate-fade-in text-left">{faq.a}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right arrow */}
+            <button
+              onClick={() => {
+                const container = document.querySelector(".faq-slider") as HTMLElement
+                if (container) container.scrollBy({ left: container.clientWidth, behavior: "smooth" })
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-primary/20 rounded-full hover:bg-primary/40 transition"
+            >
+              ▶
+            </button>
+          </div>
+
+          <div className="mt-12">
+            <p className="text-lg sm:text-xl text-secondary">
+              Still curious? The Bullemsync universe keeps expanding 🚀
+            </p>
+          </div>
+        </div>
+      </section>
+
 
       {/* Footer */}
       <footer className="py-12 px-4 border-t border-primary/20 bg-transparent">
