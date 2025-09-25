@@ -1,0 +1,714 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to cyberpunk theme with neon green primary, purple/blue accents, and black base */
+  --background: oklch(0.05 0 0); /* Deep black */
+  --foreground: oklch(0.95 0 0); /* Bright white */
+  --card: oklch(0.08 0 0); /* Dark card background */
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.7 0.25 142); /* Neon green */
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.6 0.2 280); /* Purple accent */
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.65 0.22 240); /* Blue accent */
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.1 0 0);
+  --ring: oklch(0.7 0.25 142); /* Neon green ring */
+  --chart-1: oklch(0.7 0.25 142);
+  --chart-2: oklch(0.6 0.2 280);
+  --chart-3: oklch(0.65 0.22 240);
+  --chart-4: oklch(0.75 0.2 320);
+  --chart-5: oklch(0.8 0.15 60);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.7 0.25 142);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
+  --sidebar-accent: oklch(0.15 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: oklch(0.7 0.25 142);
+}
+
+.dark {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.7 0.25 142);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.6 0.2 280);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.65 0.22 240);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.1 0 0);
+  --ring: oklch(0.7 0.25 142);
+  --chart-1: oklch(0.7 0.25 142);
+  --chart-2: oklch(0.6 0.2 280);
+  --chart-3: oklch(0.65 0.22 240);
+  --chart-4: oklch(0.75 0.2 320);
+  --chart-5: oklch(0.8 0.15 60);
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.7 0.25 142);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
+  --sidebar-accent: oklch(0.15 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: oklch(0.7 0.25 142);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added cyberpunk-specific animations and effects */
+@keyframes neon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes waveform {
+  0%,
+  100% {
+    height: 20px;
+  }
+  50% {
+    height: 60px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Added heartbeat animation for logo */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.neon-text {
+  color: var(--primary);
+}
+
+.neon-border {
+  border: 2px solid var(--primary);
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Added heartbeat animation class */
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-waveform {
+  animation: waveform 1s ease-in-out infinite;
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Updated background styles for image blending */
+.hero-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/artist-female-neon.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/artist-female-studio-new.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section-bg-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/artist-male-studio-new.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section-bg-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/artist-male-studio-alt.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section-bg-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/artist-male-rock.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section-bg-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-bg-4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Extended backgrounds to cover full page sections */
+.section-bg-5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/images/artist-male-rock.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section-bg-6 {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("/images/artist-female-neon.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.reflective-floor {
+  position: relative;
+}
+
+.reflective-floor::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(112, 255, 112, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 255, 112, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Updated slider styles for slower transitions and vertical rectangle layout */
+.about-frame {
+  background: rgba(128, 128, 128, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(128, 128, 128, 0.3);
+  border-radius: 2rem;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.about-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, transparent 15%, transparent 85%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Faster transition for manual control */
+}
+
+.slider-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  scroll-snap-align: center;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  z-index: 3;
+  position: relative;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(112, 255, 112, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid rgba(112, 255, 112, 0.5);
+}
+
+.slider-dot.active {
+  background: var(--primary);
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* Updated glassy card styles for vertical rectangle design */
+.glass-card {
+  background: rgba(128, 128, 128, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 450px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(112, 255, 112, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* Updated mobile-specific styles for better card display and header fixes */
+@media (max-width: 768px) {
+  .glass-card {
+    max-width: 320px; /* Increased from 280px for better readability */
+    min-height: 350px; /* Increased from 320px for better content fit */
+    padding: 1.5rem; /* Increased padding for better spacing */
+  }
+
+  .slider-slide {
+    padding: 0.5rem; /* Increased padding for better spacing */
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-frame {
+    padding: 1.5rem; /* Increased padding */
+    margin: 0 1rem;
+  }
+
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider-track {
+    display: flex;
+    width: 300%;
+    transition: transform 4s ease-in-out; /* Even slower on mobile for better UX */
+  }
+
+  /* Fixed header text sizing - increased from too small back to readable sizes */
+  h1 {
+    font-size: 3rem !important; /* Increased from 2.5rem */
+    line-height: 1.1;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  h2 {
+    font-size: 2rem !important; /* Increased from 1.75rem */
+    line-height: 1.2;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  h3 {
+    font-size: 1.75rem !important; /* Increased from 1.5rem */
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  /* Better mobile text sizing - increased from too small */
+  .text-6xl {
+    font-size: 3rem !important; /* Increased from 2.5rem */
+  }
+
+  .text-8xl {
+    font-size: 3.5rem !important; /* Increased from 3rem */
+  }
+
+  .text-4xl {
+    font-size: 2rem !important; /* Increased from 1.75rem */
+  }
+
+  .text-3xl {
+    font-size: 1.75rem !important; /* Increased from 1.5rem */
+  }
+
+  .text-2xl {
+    font-size: 1.5rem !important; /* Increased from 1.25rem */
+  }
+
+  /* Mobile padding adjustments */
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .py-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Mobile hero section adjustments */
+  .min-h-screen {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+}
+
+/* Additional mobile breakpoint for very small screens with better sizing */
+@media (max-width: 480px) {
+  .glass-card {
+    max-width: 300px; /* Increased from 260px */
+    min-height: 330px; /* Increased from 300px */
+    padding: 1.25rem; /* Increased padding */
+  }
+
+  .about-frame {
+    padding: 1rem; /* Increased from 0.75rem */
+    margin: 0 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem !important; /* Increased from 2rem */
+  }
+
+  .text-6xl {
+    font-size: 2.5rem !important; /* Increased from 2rem */
+  }
+
+  .text-8xl {
+    font-size: 3rem !important; /* Increased from 2.25rem */
+  }
+}
+
+/* Added trading-related UI elements */
+.trading-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(112, 255, 112, 0.1);
+  border: 1px solid rgba(112, 255, 112, 0.3);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.price-ticker {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(112, 255, 112, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.token-badge {
+  background: linear-gradient(135deg, rgba(112, 255, 112, 0.2), rgba(147, 51, 234, 0.2));
+  border: 1px solid rgba(112, 255, 112, 0.4);
+  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
