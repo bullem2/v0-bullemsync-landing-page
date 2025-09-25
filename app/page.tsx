@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Instagram, Music, Facebook, X, ChevronDown } from "lucide-react"
+import { Instagram, Music, Facebook, XIcon, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 const TikTokIcon = () => (
