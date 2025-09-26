@@ -252,8 +252,6 @@ export default function BullemsyncLanding() {
       <section className="py-20 px-4 bg-background/90 section-bg-4">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center text-primary text-balance">
-            What We Serve
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center text-primary text-balance">
   What We Serve
 </h3>
 
