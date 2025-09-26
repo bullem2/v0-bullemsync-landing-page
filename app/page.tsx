@@ -253,52 +253,62 @@ export default function BullemsyncLanding() {
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center text-primary text-balance">
             What We Serve
-          </h3>
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center text-primary text-balance">
+  What We Serve
+</h3>
 
-          <div className="about-frame overflow-hidden">
-            <div className="slider-container relative w-full flex snap-x snap-mandatory scroll-smooth overflow-x-auto touch-pan-x">
-              {aboutSlides.map((slide, index) => (
-                <div key={index} className="slider-slide w-full flex-shrink-0 px-4 sm:px-6 snap-center">
-                  <div className="glass-card p-4 sm:p-6 md:p-8 h-full">
-                    <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 relative z-10">{slide.emoji}</div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-primary relative z-10 text-balance">
-                      {slide.title}
-                    </h4>
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-foreground relative z-10 text-pretty">
-                      {slide.content}
-                    </p>
-
-                    {slide.title.includes("Trader") && (
-                      <div className="mt-4 sm:mt-6 flex justify-center">
-                        <div className="token-badge">BST</div>
-                      </div>
-                    )}
-
-                    {slide.title.includes("Listener") && (
-                      <div className="mt-4 sm:mt-6 flex justify-center">
-                        <div className="price-ticker text-xs sm:text-sm">
-                          <span>Earn Rate:</span>
-                          <span className="text-primary">0.05 $BST/min</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="slider-dots flex justify-center mt-4">
-              {aboutSlides.map((_, index) => (
-                <button
-                  key={index}
-                  className={`slider-dot w-3 h-3 rounded-full mx-1 transition-colors ${
-                    index === currentSlide ? "bg-primary" : "bg-primary/30"
-                  }`}
-                  onClick={() => handleSlideClick(index)}
-                />
-              ))}
-            </div>
+<div className="about-frame overflow-hidden">
+  <div
+    className="slider-container relative w-full flex snap-x snap-mandatory scroll-smooth overflow-x-auto touch-pan-x"
+    style={{ WebkitOverflowScrolling: "touch" }} // iOS smooth scrolling
+  >
+    {aboutSlides.map((slide, index) => (
+      <div
+        key={index}
+        className="slider-slide w-full flex-shrink-0 px-4 sm:px-6 snap-center"
+      >
+        <div className="glass-card p-4 sm:p-6 md:p-8 h-full">
+          <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 relative z-10">
+            {slide.emoji}
           </div>
+          <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-primary relative z-10 text-balance">
+            {slide.title}
+          </h4>
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-foreground relative z-10 text-pretty">
+            {slide.content}
+          </p>
+
+          {slide.title.includes("Trader") && (
+            <div className="mt-4 sm:mt-6 flex justify-center">
+              <div className="token-badge">BST</div>
+            </div>
+          )}
+
+          {slide.title.includes("Listener") && (
+            <div className="mt-4 sm:mt-6 flex justify-center">
+              <div className="price-ticker text-xs sm:text-sm">
+                <span>Earn Rate:</span>
+                <span className="text-primary">0.05 $BST/min</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div className="slider-dots flex justify-center mt-4">
+    {aboutSlides.map((_, index) => (
+      <button
+        key={index}
+        className={`slider-dot w-3 h-3 rounded-full mx-1 transition-colors ${
+          index === currentSlide ? "bg-primary" : "bg-primary/30"
+        }`}
+        onClick={() => handleSlideClick(index)}
+      />
+    ))}
+  </div>
+</div>
 
           <div className="mt-12 text-center">
             <p className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-8 text-foreground text-pretty">
