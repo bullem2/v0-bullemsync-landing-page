@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Updated to cyberpunk theme with neon green primary, purple/blue accents, and black base */
   --background: oklch(0.05 0 0); /* Deep black */
