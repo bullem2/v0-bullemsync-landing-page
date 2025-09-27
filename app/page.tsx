@@ -414,7 +414,7 @@ export default function BullemsyncLanding() {
                 </h2>
               </div>
               <p className="text-gray-400 text-sm">
-                Revolutionizing the music industry through blockchain technology and community-driven innovation.
+                Revolutionizing the music industry through the most advanced  technology and community-driven innovation.
               </p>
             </div>
 
@@ -454,7 +454,7 @@ export default function BullemsyncLanding() {
           </div>
 
           <div className="border-t border-purple-500/20 mt-8 pt-8 text-center text-sm text-gray-500">
-            <p>© 2024 Bullemsync. All rights reserved. The future of music is here.</p>
+            <p>© 2025 Bullemsync. All rights reserved. The future of music is here.</p>
           </div>
         </div>
       </footer>
