@@ -182,23 +182,7 @@ export default function BullemsyncLanding() {
             <div className="w-0 h-0 border-2 border-green-400 rounded-full animate-ping-slower opacity-15" 
                  style={{ animationDelay: '1s' }} />
           </div>
-          
-          {/* Floating Music Notes */}
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute text-green-400 animate-float-slow"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${15 + Math.random() * 20}s`,
-                fontSize: `${1 + Math.random() * 2}rem`,
-              }}
-            >
-              ♫
-            </div>
-          ))}
+        
           
           {/* Energy Particles */}
           {[...Array(30)].map((_, i) => (
