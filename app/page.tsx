@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Instagram, Music, Facebook, ChevronDown, Play, Pause, Volume2 } from "lucide-react"
 import Image from "next/image"
 import Head from "next/head"
+import Link from "next/link"
 
 const TikTokIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -186,15 +187,15 @@ export default function BullemsyncLanding() {
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center gap-3">
               <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={40} height={40} />
-              <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-lime-400 bg-clip-text text-transparent">
                 BULLEMSYNC
               </span>
             </div>
             
             <div className="flex items-center gap-6">
-              <a href="/about" className="text-gray-300 hover:text-purple-400 transition-colors font-medium">
+              <Link href="/about" className="text-gray-300 hover:text-purple-400 transition-colors font-medium">
                 About
-              </a>
+              </Link>
               <Button 
                 onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
                 className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
@@ -519,14 +520,15 @@ export default function BullemsyncLanding() {
                   Join Waitlist Now
                 </Button>
                 
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-12 py-6 border-green-400 text-green-400 hover:bg-green-400/10 font-semibold rounded-2xl text-lg transition-all duration-300"
-                  onClick={() => window.open("/about", "_self")}
-                >
-                  Learn More
-                </Button>
+                <Link href="/about">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="px-12 py-6 border-green-400 text-green-400 hover:bg-green-400/10 font-semibold rounded-2xl text-lg transition-all duration-300"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
               </div>
 
               {/* Live Counter */}
@@ -551,7 +553,7 @@ export default function BullemsyncLanding() {
               <div className="md:col-span-2">
                 <div className="flex items-center gap-4 mb-4">
                   <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={50} height={50} />
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-lime-400 bg-clip-text text-transparent">
                     BULLEMSYNC
                   </h2>
                 </div>
@@ -564,7 +566,7 @@ export default function BullemsyncLanding() {
               <div>
                 <h3 className="font-semibold text-white mb-4">Quick Links</h3>
                 <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="/about" className="hover:text-purple-400 transition-colors">About</a></li>
+                  <li><Link href="/about" className="hover:text-purple-400 transition-colors">About</Link></li>
                   <li><a href="#" className="hover:text-purple-400 transition-colors">Whitepaper</a></li>
                   <li><a href="#" className="hover:text-purple-400 transition-colors">Roadmap</a></li>
                   <li><a href="#" className="hover:text-purple-400 transition-colors">Contact</a></li>
