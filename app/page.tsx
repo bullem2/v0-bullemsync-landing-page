@@ -596,7 +596,7 @@ export default function BullemsyncLanding() {
             </div>
 
             <div className="border-t border-purple-500/20 mt-8 pt-8 text-center text-sm text-gray-500">
-              <p>© 2024 Bullemsync. All rights reserved. The future of music is here.</p>
+              <p>© 2025 Bullemsync. All rights reserved. The future of music is here.</p>
             </div>
           </div>
         </footer>
