@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Instagram, Music, Facebook, ChevronDown, Play, Pause, Volume2, ArrowDown } from "lucide-react"
 import Image from "next/image"
@@ -20,7 +19,6 @@ const XIcon = () => (
 )
 
 export default function BullemsyncLanding() {
-  const router = useRouter()
   const [isLoaded, setIsLoaded] = useState(false)
   const [waitlistCount, setWaitlistCount] = useState(4200)
   const [activePads, setActivePads] = useState<number[]>([])
@@ -35,20 +33,26 @@ export default function BullemsyncLanding() {
     {
       emoji: "🎧",
       title: "For Listeners",
-      content: "Imagine pressing play on your favorite track and watching your wallet grow at the same time. Every single minute you stream on Bullemsync, you earn $BST tokens — real digital rewards tied to your listening time.",
+      content: "Imagine pressing play on your favorite track and watching your wallet grow at the same time. Every single minute you stream on Bullemsync, you earn $BST tokens — real digital rewards tied to your listening time. Whether you're vibing solo, curating playlists, or discovering new artists, your streams now have tangible value. Music isn't just entertainment anymore — it's a lifestyle where chilling to your favorite soundtracks puts you on the path to financial gain.",
       image: "/images/paragraph_relaxin_1.jpg"
     },
     {
       emoji: "💽",
       title: "For Traders", 
-      content: "Think of songs as digital collectibles with real market value. On Bullemsync, every track can be bought, sold, and resold like limited-edition assets.",
+      content: "Think of songs as digital collectibles with real market value. On Bullemsync, every track can be bought, sold, and resold like limited-edition assets. As songs gain popularity, their trade value rises, letting you flip tracks like stocks or crypto. It's not just about listening anymore; it's about timing, strategy, and spotting the next big hit. Trading on Bullemsync transforms music into a marketplace, where your ear for sound becomes your edge in wealth-building.",
       image: "/images/paragraph_records_2.jpg"
     },
     {
       emoji: "🎤",
       title: "For Artists",
-      content: "Traditional streaming pays artists only from plays, but on Bullemsync, every trade of their song also funnels revenue back to them.",
+      content: "This is where the game changes for creators. Traditional streaming pays artists only from plays, but on Bullemsync, every trade of their song also funnels revenue back to them. That means each fan trade — buying, holding, or flipping — boosts the artist's income in real time. Artists are no longer limited to royalties; they share directly in the growth and demand of their own music. It's a new era where talent and community trading amplify each other, multiplying artist earnings beyond streams.",
       image: "/images/paragraph_stage_3.jpg"
+    },
+    {
+      emoji: "🪙",
+      title: "For Everyone",
+      content: "At the core of this ecosystem is $BST — the heartbeat of Bullemsync. It powers every stream, every trade, and every transaction seamlessly across the globe. $BST ensures instant, borderless, and transparent interactions, making it simple for anyone, anywhere, to engage with music as both culture and economy.",
+      image: "/images/artist-male-1.jpg"
     }
   ]
 
@@ -64,6 +68,35 @@ export default function BullemsyncLanding() {
     {
       q: "What's special for artists?",
       a: "Artists earn not just from streams but also trading commissions whenever their tracks are bought or sold.",
+    },
+    {
+      q: "Can I trade songs like crypto?",
+      a: "Yes! Songs on Bullemsync can be traded like digital assets, allowing you to buy, hold, and resell tracks for profit.",
+    },
+    {
+      q: "What is BST?",
+      a: "BST (Bullemsync Token) is our in-app currency powering streams, trades, and rewards.",
+    },
+  ]
+
+  const artistSpotlight = [
+    {
+      image: "/images/artist-female-studio-new.jpg",
+      name: "Studio Artist",
+      role: "Producer & Composer",
+      description: "Creating the next generation of tradable music assets"
+    },
+    {
+      image: "/images/artist-male-1.jpg",
+      name: "Independent Artist", 
+      role: "Singer & Songwriter",
+      description: "Turning streams into sustainable income"
+    },
+    {
+      image: "/images/artist-male-rock.jpg",
+      name: "Rock Performer",
+      role: "Band Leader",
+      description: "Engaging fans through music trading ecosystem"
     }
   ]
 
@@ -112,10 +145,10 @@ export default function BullemsyncLanding() {
     <>
       <Head>
         <title>Bullemsync - Revolutionizing Music Streaming & Trading Platform</title>
-        <meta name="description" content="Bullemsync transforms music into assets. Stream, trade, and earn $BST tokens. Join the future of music economy." />
-        <meta name="keywords" content="music streaming, crypto music, NFT songs, music trading, $BST token" />
+        <meta name="description" content="Bullemsync transforms music into assets. Stream, trade, and earn $BST tokens. Join the future of music economy where listeners, artists, and traders thrive together." />
+        <meta name="keywords" content="music streaming, crypto music, NFT songs, music trading, $BST token, blockchain music, earn from streaming" />
         <meta property="og:title" content="Bullemsync - Where Sound Becomes Assets" />
-        <meta property="og:description" content="Revolutionary platform turning music streams into tradable assets." />
+        <meta property="og:description" content="Revolutionary platform turning music streams into tradable assets. Join the waitlist today!" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://bullemsync.com" />
       </Head>
@@ -126,9 +159,12 @@ export default function BullemsyncLanding() {
           <source src="/audio/ambient.mp3" type="audio/mpeg" />
         </audio>
 
-        {/* Simple Star Background */}
-        <div className="fixed inset-0 bg-black pointer-events-none">
-          {[...Array(50)].map((_, i) => (
+        {/* Simplified Background */}
+        <div className="fixed inset-0 bg-black pointer-events-none" />
+        
+        {/* Subtle Star Background */}
+        <div className="fixed inset-0 pointer-events-none">
+          {[...Array(30)].map((_, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
@@ -137,106 +173,80 @@ export default function BullemsyncLanding() {
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 5}s`,
                 animationDuration: `${3 + Math.random() * 2}s`,
+                opacity: 0.3 + Math.random() * 0.4,
               }}
             />
           ))}
         </div>
 
-        {/* Navigation - Clean and Simple */}
-        <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        {/* Navigation - Simplified */}
+        <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={35} height={35} />
-              <span className="text-lg font-bold text-white">BULLEMSYNC</span>
+              <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={40} height={40} />
+              <span className="text-xl font-bold text-white">
+                BULLEMSYNC
+              </span>
             </div>
             
             <Button 
               onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
-              className="bg-white text-black hover:bg-gray-200 font-semibold"
+              className="bg-white text-black hover:bg-gray-200 font-bold"
             >
               Join Waitlist
             </Button>
           </div>
         </nav>
 
-        {/* Hero Section with Prominent Image */}
+        {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/singer_stage_3.jpg"
-              alt="Artist performing on stage"
-              fill
-              className="object-cover opacity-40"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
+          <div className="absolute inset-0 bg-[url('/images/singer_stage_3.jpg')] bg-cover bg-center opacity-40" />
+          
           {/* Audio Control */}
           <button 
             onClick={toggleAudio}
-            className="fixed top-6 right-6 z-50 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
+            className="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
           >
             {isPlaying ? (
-              <Pause className="w-4 h-4 text-white" />
+              <Pause className="w-5 h-5 text-white" />
             ) : (
-              <Play className="w-4 h-4 text-white" />
+              <Play className="w-5 h-5 text-white" />
             )}
           </button>
 
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            {/* Main Content */}
+          <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            {/* Main Title */}
             <div className={`mb-8 transition-all duration-1000 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
-              <div className="flex items-center justify-center mb-8">
-                <Image
-                  src="/images/bullemsync-logo.png"
-                  alt="Bullemsync Logo"
-                  width={120}
-                  height={120}
-                  className="filter brightness-125"
-                />
-              </div>
-              
-              {/* Main Title */}
-              <h1 className="text-5xl sm:text-7xl md:text-8xl font-black mb-6 text-white">
+              <h1 className="text-6xl sm:text-8xl md:text-9xl font-black mb-4 text-white">
                 BULLEMSYNC
               </h1>
               
-              {/* Bold Caption with Prominent Image Reference */}
-              <div className="mb-8">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-300 mb-4">
-                  Where Music Meets Blockchain
-                </p>
-                <div className="w-32 h-1 bg-white mx-auto mt-4 rounded-full" />
+              {/* Bold Caption with Stage Image */}
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white bg-black/50 px-6 py-3 rounded-lg inline-block">
+                WHERE MUSIC MEETS THE BLOCKCHAIN REVOLUTION
               </div>
             </div>
 
             {/* Taglines */}
             <div className="space-y-4 mb-12">
-              <p className={`text-lg sm:text-2xl font-light transition-all duration-1000 delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-                Stream <span className="text-white font-semibold">smarter</span>
-              </p>
-              <p className={`text-lg sm:text-2xl font-light transition-all duration-1000 delay-600 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-                Trade <span className="text-white font-semibold">smarter</span>
-              </p>
-              <p className={`text-lg sm:text-2xl font-light transition-all duration-1000 delay-900 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-                Earn <span className="text-white font-semibold">smarter</span>
+              <p className={`text-xl sm:text-2xl md:text-3xl font-light transition-all duration-1000 delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+                Stream <span className="font-semibold">smarter</span>, trade <span className="font-semibold">smarter</span>, earn <span className="font-semibold">smarter</span>
               </p>
             </div>
 
             {/* CTA Button */}
-            <div className={`transition-all duration-1000 delay-1200 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
+            <div className={`transition-all duration-1000 delay-900 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
               <Button
                 size="lg"
-                className="text-lg px-12 py-6 bg-white text-black hover:bg-gray-200 font-semibold rounded-xl border-0 shadow-2xl transition-all duration-300"
+                className="text-lg px-12 py-7 bg-white text-black hover:bg-gray-200 font-bold rounded-2xl transition-all duration-300"
                 onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
               >
                 Join the Revolution
               </Button>
               
               {/* Waitlist Counter */}
-              <div className="mt-6 text-sm text-gray-400">
-                <span className="text-white font-semibold">{waitlistCount.toLocaleString()}+</span> already on the waitlist
+              <div className="mt-6 text-sm text-gray-300">
+                <span className="font-semibold">{waitlistCount.toLocaleString()}+</span> already on the waitlist
               </div>
             </div>
 
@@ -244,69 +254,67 @@ export default function BullemsyncLanding() {
             <div className="mt-16">
               <button
                 onClick={() => setShowLearnMore(!showLearnMore)}
-                className="flex items-center gap-2 mx-auto text-white hover:text-gray-300 transition-colors group"
+                className="flex items-center gap-2 mx-auto text-white hover:text-gray-300 transition-colors"
               >
-                <span className="font-medium">Learn More</span>
+                <span className="font-semibold">Learn More</span>
                 <ArrowDown className={`w-4 h-4 transition-transform duration-300 ${showLearnMore ? 'rotate-180' : ''}`} />
               </button>
               
               {showLearnMore && (
-                <div className="mt-6 max-w-3xl mx-auto bg-black/50 backdrop-blur-lg border border-white/20 rounded-xl p-6 animate-fade-in">
-                  <div className="space-y-4 text-left">
-                    <h2 className="text-xl font-bold text-white">About Bullemsync</h2>
-                    <p className="text-gray-300 leading-relaxed">
-                      Bullemsync is a next-generation music and trading platform designed to revolutionize how music is
-                      experienced, valued, and monetized. We empower artists, traders, and listeners to participate in a 
-                      dynamic digital ecosystem where every song is an asset.
-                    </p>
-                    <p className="text-gray-300 leading-relaxed">
-                      We're building an economy around music. Songs on Bullemsync are tradable assets with real value.
-                      Artists maintain control and transparency while earning from both streams and trades.
-                    </p>
-                    <p className="text-gray-300 leading-relaxed font-medium">
-                      Join us as we reshape the future of music — one beat, one trade, one play at a time.
-                    </p>
+                <div className="mt-6 max-w-4xl mx-auto bg-black/70 backdrop-blur-lg border border-white/20 rounded-2xl p-8 animate-fade-in">
+                  <div className="space-y-6 text-left">
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-bold text-white">About Bullemsync</h2>
+                      <p className="text-gray-300 leading-relaxed">
+                        Bullemsync is a next-generation music and trading platform designed to revolutionize how music is
+                        experienced, valued, and monetized. At our core, we empower artists, traders, and listeners to
+                        participate in a dynamic digital ecosystem where every song is an asset, every play has impact, and
+                        every user can earn.
+                      </p>
+                      <p className="text-gray-300 leading-relaxed">
+                        We're not just a streaming service — we're building an economy around music. Songs on Bullemsync are
+                        tradable, each with a unique energy signature, trade color identity, and earning potential. Artists
+                        maintain control and transparency over their content. Traders can speculate and earn through song
+                        performance. Listeners can mine value by simply enjoying music or curating powerful Radio Channels.
+                      </p>
+                      <p className="text-gray-300 leading-relaxed font-semibold">
+                        Join us as we reshape the future of music — one beat, one trade, one play at a time.
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-5 h-8 border-2 border-white/50 rounded-full flex justify-center">
-              <div className="w-1 h-2 bg-white/50 rounded-full mt-2 animate-pulse" />
-            </div>
-          </div>
         </section>
 
         {/* User Roles Section */}
-        <section className="py-20 relative bg-black">
-          <div className="max-w-6xl mx-auto px-4">
+        <section className="py-20 relative">
+          <div className="relative z-10 max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
                 The Ecosystem
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                A platform where every participant wins - artists, listeners, and traders alike
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                A revolutionary platform where every participant wins
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {userRoles.map((role, index) => (
                 <div 
                   key={index}
-                  className="group relative bg-white/5 rounded-xl border border-white/10 p-6 hover:border-white/20 transition-all duration-300"
+                  className="group relative bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 hover:border-white/20 transition-all duration-500"
                 >
                   <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="text-3xl">{role.emoji}</div>
-                      <h3 className="text-xl font-bold text-white">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="text-4xl">{role.emoji}</div>
+                      <h3 className="text-2xl font-bold text-white">
                         {role.title}
                       </h3>
                     </div>
                     
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed text-lg">
                       {role.content}
                     </p>
                   </div>
@@ -316,91 +324,111 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* Prominent Image Section */}
+        {/* Artist Spotlight Section */}
         <section className="py-20 relative">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="relative rounded-2xl overflow-hidden">
-              <Image
-                src="/images/singer_stage_3.jpg"
-                alt="Artist commanding the stage"
-                width={1200}
-                height={600}
-                className="w-full h-64 sm:h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                  The Stage is Yours
-                </h3>
-                <p className="text-gray-200 text-lg">
-                  Every performance, every stream, every trade - building the future of music together
-                </p>
-              </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
+                Artist Spotlight
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Meet the creators shaping the future of music
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 bg-black">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-white">
-              Frequently Asked Questions
-            </h3>
-
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className="bg-white/5 rounded-lg border border-white/10 p-6 text-left cursor-pointer hover:bg-white/10 transition-colors"
-                  onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
-                >
-                  <div className="flex justify-between items-center">
-                    <h4 className="text-lg font-semibold text-white">
-                      {faq.q}
-                    </h4>
-                    <ChevronDown
-                      className={`w-5 h-5 text-white transition-transform ${
-                        openFAQ === i ? "rotate-180" : ""
-                      }`}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {artistSpotlight.map((artist, index) => (
+                <div key={index} className="group relative">
+                  <div className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10">
+                    <Image
+                      src={artist.image}
+                      alt={artist.name}
+                      width={400}
+                      height={300}
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-xl font-bold text-white mb-2">{artist.name}</h3>
+                      <p className="text-gray-300 font-semibold mb-2">{artist.role}</p>
+                      <p className="text-gray-300 text-sm">{artist.description}</p>
+                    </div>
                   </div>
-                  {openFAQ === i && (
-                    <p className="mt-3 text-gray-300 animate-fade-in">{faq.a}</p>
-                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="py-20 px-4 bg-black/80 relative">
+          <div className="relative z-10 max-w-6xl mx-auto text-center">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-white">
+              Frequently Asked Questions
+            </h3>
+
+            <div className="relative">
+              <div
+                ref={faqSliderRef}
+                className="faq-slider flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-6 px-8 pb-4"
+                style={{ scrollbarWidth: "none" }}
+              >
+                {faqs.map((faq, i) => (
+                  <div
+                    key={i}
+                    className={`flex-shrink-0 w-[85%] sm:w-[45%] md:w-[30%] snap-center rounded-2xl border border-white/20 bg-white/5 backdrop-blur-lg p-6 transition-all duration-300 cursor-pointer ${
+                      openFAQ === i ? "bg-white/10 scale-[1.03]" : "hover:bg-white/10"
+                    }`}
+                    onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <h4 className="text-lg sm:text-xl font-semibold text-white text-left">
+                        {faq.q}
+                      </h4>
+                      <ChevronDown
+                        className={`w-6 h-6 text-white transition-transform ${
+                          openFAQ === i ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                    {openFAQ === i && (
+                      <p className="mt-4 text-gray-300 animate-fade-in text-left">{faq.a}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-20 bg-black">
-          <div className="max-w-3xl mx-auto text-center px-4">
-            <div className="bg-white/5 rounded-2xl border border-white/10 p-8">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
-                Ready to Begin?
+        <section className="py-20 relative">
+          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+            <div className="bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 p-12">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
+                Ready to Revolutionize Music?
               </h2>
               
-              <p className="text-lg text-gray-300 mb-8">
-                Join thousands of early adopters shaping the future of music streaming and trading.
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join thousands of early adopters who are already shaping the future of music streaming and trading.
               </p>
 
               <Button
                 size="lg"
-                className="px-12 py-6 bg-white text-black hover:bg-gray-200 font-semibold rounded-xl text-lg transition-all duration-300"
+                className="px-12 py-6 bg-white text-black hover:bg-gray-200 font-bold rounded-2xl text-lg transition-all duration-300"
                 onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
               >
                 Join Waitlist Now
               </Button>
 
               {/* Live Counter */}
-              <div className="mt-6 p-4 bg-black/30 rounded-xl border border-white/10">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-400">
+              <div className="mt-8 p-4 bg-black/40 rounded-2xl border border-white/10">
+                <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                     <span>Live Waitlist Count:</span>
                   </div>
-                  <span className="text-white font-bold text-lg">{waitlistCount.toLocaleString()}+</span>
+                  <span className="text-white font-bold text-xl">{waitlistCount.toLocaleString()}+</span>
                 </div>
               </div>
             </div>
@@ -408,24 +436,26 @@ export default function BullemsyncLanding() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 px-4 border-t border-white/10 bg-black">
+        <footer className="py-12 px-4 border-t border-white/10 bg-black/80">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               {/* Brand */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
+              <div className="md:col-span-2">
+                <div className="flex items-center gap-4 mb-4">
                   <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={40} height={40} />
-                  <h2 className="text-xl font-bold text-white">BULLEMSYNC</h2>
+                  <h2 className="text-2xl font-bold text-white">
+                    BULLEMSYNC
+                  </h2>
                 </div>
                 <p className="text-gray-400 text-sm">
-                  Revolutionizing music through technology and community.
+                  Revolutionizing the music industry through advanced technology and community-driven innovation.
                 </p>
               </div>
 
               {/* Social */}
               <div>
                 <h3 className="font-semibold text-white mb-4">Connect</h3>
-                <div className="flex gap-3">
+                <div className="flex gap-4">
                   {[
                     { icon: Instagram, href: "https://www.instagram.com/bullemsync" },
                     { icon: TikTokIcon, href: "https://www.tiktok.com/@bullemsync" },
@@ -437,9 +467,9 @@ export default function BullemsyncLanding() {
                       href={SocialIcon.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
+                      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
                     >
-                      <SocialIcon.icon className="w-4 h-4 text-white" />
+                      <SocialIcon.icon className="w-5 h-5 text-white" />
                     </a>
                   ))}
                 </div>
@@ -447,7 +477,7 @@ export default function BullemsyncLanding() {
             </div>
 
             <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-500">
-              <p>© 2024 Bullemsync. All rights reserved.</p>
+              <p>© 2024 Bullemsync. All rights reserved. The future of music is here.</p>
             </div>
           </div>
         </footer>
