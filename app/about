@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function AboutPage() {
+export default function About() {
   return (
       <div className="w-full py-8 space-y-8">
         <h1 className="text-2xl font-bold text-white">About Us</h1>
@@ -42,8 +42,8 @@ export default function AboutPage() {
                 platform that fairly rewards all participants in the music ecosystem.
               </p>
               <p className="text-gray-300">
-                After months of development and testing, we launched our beta platform in early 2023, quickly gaining
-                traction among independent artists and music traders. Today, we're proud to host a growing community of
+                After months of development and testing, we're ready to  launched our  platform, indeces shows we are quickly gaining
+                traction among independent artists and music traders. we're proud to host a fast growing community of
                 creators and listeners who are pioneering a new era in music consumption and ownership.
               </p>
             </div>
