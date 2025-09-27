@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Instagram, Music, Facebook, ChevronDown, Play, Pause, Volume2 } from "lucide-react"
 import Image from "next/image"
@@ -19,6 +20,7 @@ const XIcon = () => (
 )
 
 export default function BullemsyncLanding() {
+  const router = useRouter()
   const [isLoaded, setIsLoaded] = useState(false)
   const [waitlistCount, setWaitlistCount] = useState(4200)
   const [activePads, setActivePads] = useState<number[]>([])
@@ -519,14 +521,14 @@ export default function BullemsyncLanding() {
                   Join Waitlist Now
                 </Button>
                 
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-12 py-6 border-green-400 text-green-400 hover:bg-green-400/10 font-semibold rounded-2xl text-lg transition-all duration-300"
-                  onClick={() => window.open("/about", "_self")}
-                >
-                  Learn More
-                </Button>
+              <Button
+  variant="outline"
+  size="lg"
+  className="px-12 py-6 border-green-400 text-green-400 hover:bg-green-400/10 font-semibold rounded-2xl text-lg transition-all duration-300"
+  onClick={() => router.push("/about")}
+>
+  Learn More
+</Button>
               </div>
 
               {/* Live Counter */}
