@@ -193,9 +193,22 @@ export default function BullemsyncLanding() {
             </div>
             
             <div className="flex items-center gap-6">
-              <Link href="/about" className="text-gray-300 hover:text-purple-400 transition-colors font-medium">
+              {/* About link */}
+              <a 
+                href="#about"
+                className="text-gray-300 hover:text-purple-400 transition-colors font-medium"
+              >
                 About
-              </Link>
+              </a>
+
+              {/* Learn More link */}
+              <a 
+                href="#learn-more"
+                className="text-gray-300 hover:text-purple-400 transition-colors font-medium"
+              >
+                Learn More
+              </a>
+
               <Button 
                 onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
                 className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
@@ -284,8 +297,8 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* User Roles Section */}
-        <section className="py-20 relative">
+        {/* User Roles Section (About) */}
+        <section id="about" className="py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/5 to-black" />
           
           <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -339,8 +352,8 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* Artist Spotlight Section */}
-        <section className="py-20 relative">
+        {/* Artist Spotlight Section (Learn More) */}
+        <section id="learn-more" className="py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-green-900/5 to-black" />
           
           <div className="relative z-10 max-w-7xl mx-auto px-4">
