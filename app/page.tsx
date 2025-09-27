@@ -2,10 +2,9 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Instagram, Music, Facebook, ChevronDown, Play, Pause, Volume2 } from "lucide-react"
+import { Instagram, Music, Facebook, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import Head from "next/head"
-import Link from "next/link"
 
 const TikTokIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -24,7 +23,6 @@ export default function BullemsyncLanding() {
   const [waitlistCount, setWaitlistCount] = useState(4200)
   const [activePads, setActivePads] = useState<number[]>([])
   const [puzzleUnlocked, setPuzzleUnlocked] = useState(false)
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
@@ -193,22 +191,6 @@ export default function BullemsyncLanding() {
             </div>
             
             <div className="flex items-center gap-6">
-              {/* About link */}
-              <a 
-                href="#about"
-                className="text-gray-300 hover:text-purple-400 transition-colors font-medium"
-              >
-                About
-              </a>
-
-              {/* Learn More link */}
-              <a 
-                href="#learn-more"
-                className="text-gray-300 hover:text-purple-400 transition-colors font-medium"
-              >
-                Learn More
-              </a>
-
               <Button 
                 onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
                 className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
@@ -223,19 +205,6 @@ export default function BullemsyncLanding() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30" />
           
-          {/* Audio Control */}
-          <button 
-            onClick={toggleAudio}
-            className="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-purple-600/20 backdrop-blur-sm border border-purple-400/30 flex items-center justify-center hover:bg-purple-600/30 transition-all duration-300 group"
-          >
-            {isPlaying ? (
-              <Pause className="w-5 h-5 text-purple-300" />
-            ) : (
-              <Play className="w-5 h-5 text-purple-300" />
-            )}
-            <Volume2 className="absolute w-3 h-3 text-purple-200 opacity-0 group-hover:opacity-100 transition-opacity -top-1 -right-1" />
-          </button>
-
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
             {/* Animated Logo */}
             <div className={`mb-8 transition-all duration-1000 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
@@ -297,8 +266,8 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* User Roles Section (About) */}
-        <section id="about" className="py-20 relative">
+        {/* User Roles Section */}
+        <section className="py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/5 to-black" />
           
           <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -334,14 +303,6 @@ export default function BullemsyncLanding() {
                     <p className="text-gray-300 leading-relaxed text-lg">
                       {role.content}
                     </p>
-                    
-                    {/* Interactive Element */}
-                    <div className="mt-6 flex items-center justify-between">
-                      <span className="text-purple-400 text-sm font-semibold">Learn More →</span>
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span className="text-white text-lg">+</span>
-                      </div>
-                    </div>
                   </div>
                   
                   {/* Hover Glow Effect */}
@@ -352,8 +313,8 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* Artist Spotlight Section (Learn More) */}
-        <section id="learn-more" className="py-20 relative">
+        {/* Artist Spotlight Section */}
+        <section className="py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-green-900/5 to-black" />
           
           <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -393,7 +354,7 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* FAQ Section - Improved from Old Version */}
+        {/* FAQ Section */}
         <section className="py-20 px-4 bg-black/95 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-cyan-900/10" />
           
@@ -532,16 +493,6 @@ export default function BullemsyncLanding() {
                 >
                   Join Waitlist Now
                 </Button>
-                
-                <Link href="/about">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="px-12 py-6 border-green-400 text-green-400 hover:bg-green-400/10 font-semibold rounded-2xl text-lg transition-all duration-300"
-                  >
-                    Learn More
-                  </Button>
-                </Link>
               </div>
 
               {/* Live Counter */}
@@ -573,17 +524,6 @@ export default function BullemsyncLanding() {
                 <p className="text-gray-400 text-sm">
                   Revolutionizing the music industry through advance technology and community-driven innovation.
                 </p>
-              </div>
-
-              {/* Links */}
-              <div>
-                <h3 className="font-semibold text-white mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><Link href="/about" className="hover:text-purple-400 transition-colors">About</Link></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors">Whitepaper</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors">Roadmap</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors">Contact</a></li>
-                </ul>
               </div>
 
               {/* Social */}
