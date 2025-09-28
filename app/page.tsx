@@ -590,8 +590,7 @@ export default function BullemsyncLanding() {
             </div>
           </div>
         </section>
-
- {/* Interactive Music Puzzle */}
+{/* Interactive Music Puzzle */}
 <section className="py-20 relative">
   <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
   
@@ -607,7 +606,7 @@ export default function BullemsyncLanding() {
           onClick={() => handlePadClick(padIndex)}
           className={`w-20 h-20 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
             activePads.includes(padIndex)
-              ? "bg-gradient-to-r from-[#22c55e] to-cyan-400 border-[#22c55e] animate-pulse shadow-lg shadow-[#22c55e]/50"
+              ? "bg-gradient-to-r from-[#22c55e] to-cyan-400 border-[#22c55e] animate-pulse shadow-lg shadow-[#22c55e]/40"
               : "border-[#22c55e]/30 hover:border-[#22c55e]/60"
           }`}
         >
@@ -630,8 +629,8 @@ export default function BullemsyncLanding() {
           You've unlocked the future of music!
         </p>
         <Button
-          className="bg-[#22c55e] hover:bg-[#1ea34d] text-white shadow-[0_0_10px_#22c55e] px-8 py-4 text-lg font-semibold transition-all"
-          onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
+          className="bg-gradient-to-r from-[#22c55e] to-cyan-500 text-white hover:from-[#22c55e] hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-lg shadow-[#22c55e]/30"
+          onClick={() => window.open('https://forms.gle/8f2o9aFvqrKn7pwU9', '_blank')}
         >
           Join the Revolution
         </Button>
