@@ -591,56 +591,58 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* Interactive Music Puzzle */}
-        <section className="py-20 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
-          
-          <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-transparent bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text">
-              Unlock the Future
-            </h3>
+   {/* Interactive Music Puzzle */}
+<section className="py-20 relative">
+  <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
 
-            <div className="flex justify-center space-x-4 mb-8">
-              {[0, 1, 2].map((padIndex) => (
-                <button
-                  key={padIndex}
-                  onClick={() => handlePadClick(padIndex)}
-                  className={`w-20 h-20 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
-                    activePads.includes(padIndex)
-                      ? "bg-gradient-to-r from-green-400 to-cyan-400 border-green-400 animate-pulse shadow-lg shadow-green-500/25"
-                      : "border-green-400/30 hover:border-green-400/60"
-                  }`}
-                >
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div
-                      className={`w-8 h-8 rounded-full ${
-                        activePads.includes(padIndex) 
-                          ? "bg-white" 
-                          : "bg-gradient-to-r from-green-400/30 to-cyan-400/30"
-                      }`}
-                    />
-                  </div>
-                </button>
-              ))}
-            </div>
+  <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
+    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-[#39FF14] drop-shadow-[0_0_10px_#39FF14]">
+      Unlock the Future
+    </h3>
 
-            {puzzleUnlocked && (
-              <div className="mb-8 animate-fade-in">
-                <p className="text-xl text-green-400 mb-6 font-semibold">You've unlocked the future of music!</p>
-                <Button
-                  className="bg-gradient-to-r from-green-500 to-cyan-500 text-white hover:from-green-600 hover:to-cyan-600 px-8 py-4 text-lg font-semibold"
-                  onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
-                >
-                  Join the Revolution
-                </Button>
-              </div>
-            )}
-
-            {!puzzleUnlocked && (
-              <p className="text-gray-400">Click the pads in the right order to unlock something special...</p>
-            )}
+    <div className="flex justify-center space-x-4 mb-8">
+      {[0, 1, 2].map((padIndex) => (
+        <button
+          key={padIndex}
+          onClick={() => handlePadClick(padIndex)}
+          className={`w-20 h-20 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
+            activePads.includes(padIndex)
+              ? "bg-[#39FF14] border-[#39FF14] animate-pulse shadow-lg shadow-[#39FF14]/50"
+              : "border-[#39FF14]/40 hover:border-[#39FF14]/70"
+          }`}
+        >
+          <div className="w-full h-full flex items-center justify-center">
+            <div
+              className={`w-8 h-8 rounded-full ${
+                activePads.includes(padIndex) 
+                  ? "bg-white" 
+                  : "bg-[#39FF14]/20"
+              }`}
+            />
           </div>
-        </section>
+        </button>
+      ))}
+    </div>
+
+    {puzzleUnlocked && (
+      <div className="mb-8 animate-fade-in">
+        <p className="text-xl text-[#39FF14] drop-shadow-[0_0_10px_#39FF14] mb-6 font-semibold">
+          You've unlocked the future of music!
+        </p>
+        <Button
+          className="bg-[#39FF14] hover:bg-[#32e313] text-black px-8 py-4 text-lg font-semibold shadow-[0_0_15px_#39FF14]"
+          onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
+        >
+          Join the Revolution
+        </Button>
+      </div>
+    )}
+
+    {!puzzleUnlocked && (
+      <p className="text-gray-400">Click the pads in the right order to unlock something special...</p>
+    )}
+  </div>
+</section>
 
         {/* CTA Section */}
         <section className="py-20 relative">
