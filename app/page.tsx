@@ -684,7 +684,7 @@ export default function BullemsyncLanding() {
                 {/* Auto-scrolling Names */}
                 <div className="overflow-hidden relative mt-4">
                   <div className="flex whitespace-nowrap animate-marquee">
-           {[
+      {[
   "Chinonso Okeke",
   "Adebayo Johnson",
   "Zanele Khumalo",
@@ -697,66 +697,17 @@ export default function BullemsyncLanding() {
   "Olivia Johnson",
   "James Thompson",
   "Charlotte Davis",
-  "Ngozi Chukwu",
-  "Sipho Dlamini",
-  "Kofi Mensah",
-  "Lindiwe Ndlovu",
-  "Amara Eze",
-  "Chukwudi Nwosu",
-  "Ethan Miller",
-  "Sophia Wilson",
-  "David Anderson",
-  "Grace Taylor",
-  "Kwame Boateng",
-  "Fatima Bello",
-  "Precious Adeyemi",
-  "Lerato Mthembu",
-  "Brian Ochieng",
-  "Naomi Clarke",
-  "Daniel Wright",
-  "Isabella Evans",
-  "Oluwaseun Afolabi",
-  "Gift Nnamdi",
-  "Nomsa Zulu",
-  "Kevin Harris",
-  "Sarah Mitchell",
-  "Anthony Walker",
-  "Chiamaka Umeh",
-  "Omotola Akinyemi",
-  "Ayanda Nkosi",
-  "Blessing Okafor",
-  "Tawanda Chirwa",
-  "Margaret Lewis",
-  "Robert Hall",
-  "Elizabeth Scott",
-  "Patience Mbatha",
-  "Femi Oladipo",
-  "Obinna Ezeh",
-  "Musa Abubakar",
-  "Hope Chukwu",
-    "Adeola Balogun",
-  "Nkosi Phakathi",
-  "Wanjiru Njoroge",
-  "Tosin Adebisi",
-  "Naledi Molefe",
-  "Chidera Obi",
-  "Trevor Williams",
-  "Amanda Brooks",
-  "Victor Udo",
-  "Helen Parker",
-
-  "John Davies",
-  "Rebecca Hughes",
 ].map((fullName, i) => {
   const statuses = ["joined", "enlisted", "enrolled"];
   const status = statuses[Math.floor(Math.random() * statuses.length)];
+
   return (
     <span
       key={i}
       className="mx-6 text-gray-300 font-medium text-lg"
-  <span>
-  {fullName} {status}
-</span>
+    >
+      {fullName} {status}
+    </span>
                     ))}
                   </div>
                 </div>
