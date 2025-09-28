@@ -150,22 +150,34 @@ export default function BullemsyncLanding() {
         <div className="fixed inset-0 animate-pulse-slow">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/0 via-blue-900/10 to-black" />
         </div>
+{/* Floating Particles (Stars) */}
+<div className="fixed inset-0 pointer-events-none">
+  {[...Array(50)].map((_, i) => {
+    // Randomize star colors (soft whites, blues, yellows)
+    const starColors = ["#ffffff", "#ffe9c4", "#d4fbff", "#fff5e1", "#f0f8ff"];
+    const color = starColors[Math.floor(Math.random() * starColors.length)];
 
-        {/* Floating Particles */}
-        <div className="fixed inset-0 pointer-events-none">
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-purple-400 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${20 + Math.random() * 20}s`,
-              }}
-            />
-          ))}
-        </div>
+    // Randomize star size (tiny dots to mimic depth)
+    const size = Math.random() * 2 + 1; // between 1px and 3px
+
+    return (
+      <div
+        key={i}
+        className="absolute rounded-full animate-float"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          backgroundColor: color,
+          opacity: Math.random() * 0.8 + 0.2, // some stars dimmer than others
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 10}s`,
+          animationDuration: `${20 + Math.random() * 20}s`,
+        }}
+      />
+    );
+  })}
+</div>
 
         {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-purple-500/20">
