@@ -683,8 +683,7 @@ export default function BullemsyncLanding() {
                   Join Waitlist Now
                 </Button>
               </div>
-
- {/* Live Counter */}
+{/* Live Counter */}
 <div className="mt-8 p-4 bg-black/30 rounded-2xl border border-purple-500/20">
   <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
     <div className="flex items-center gap-2">
@@ -701,8 +700,8 @@ export default function BullemsyncLanding() {
     <div className="flex whitespace-nowrap animate-marquee">
       {[
         "Chinonso",
-        "Adebayo", 
-        "Zanele",
+        "Adebayo",
+        "Zanele", 
         "Thabo",
         "Mwangi",
         "Achieng",
@@ -723,7 +722,6 @@ export default function BullemsyncLanding() {
     </div>
   </div>
 </div>
-
 
         {/* Footer */}
         <footer className="py-12 px-4 border-t border-purple-500/20 bg-black/50 backdrop-blur-sm">
