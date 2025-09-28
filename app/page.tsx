@@ -659,7 +659,6 @@ export default function BullemsyncLanding() {
     )}
   </div>
 </section>
-
         {/* CTA Section */}
         <section className="py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
@@ -683,46 +682,49 @@ export default function BullemsyncLanding() {
                   Join Waitlist Now
                 </Button>
               </div>
-{/* Live Counter */}
-<div className="mt-8 p-4 bg-black/30 rounded-2xl border border-purple-500/20">
-  <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
-    <div className="flex items-center gap-2">
-      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-      <span>Live Waitlist Count:</span>
-    </div>
-    <span className="text-purple-400 font-bold text-xl">
-      {waitlistCount.toLocaleString()}+
-    </span>
-  </div>
 
-  {/* Auto-scrolling Names */}
-  <div className="overflow-hidden relative mt-4">
-    <div className="flex whitespace-nowrap animate-marquee">
-      {[
-        "Chinonso",
-        "Adebayo",
-        "Zanele", 
-        "Thabo",
-        "Mwangi",
-        "Achieng",
-        "Jackson",
-        "Emily",
-        "Michael",
-        "Olivia",
-        "James",
-        "Charlotte",
-      ].map((name, i) => (
-        <span
-          key={i}
-          className="mx-6 text-gray-300 font-medium text-lg"
-        >
-          {name}
-        </span>
-      ))}
-    </div>
-  </div>
-</div>
+              {/* Live Counter */}
+              <div className="mt-8 p-4 bg-black/30 rounded-2xl border border-purple-500/20">
+                <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span>Live Waitlist Count:</span>
+                  </div>
+                  <span className="text-purple-400 font-bold text-xl">
+                    {waitlistCount.toLocaleString()}+
+                  </span>
+                </div>
 
+                {/* Auto-scrolling Names */}
+                <div className="overflow-hidden relative mt-4">
+                  <div className="flex whitespace-nowrap animate-marquee">
+                    {[
+                      "Chinonso",
+                      "Adebayo",
+                      "Zanele", 
+                      "Thabo",
+                      "Mwangi",
+                      "Achieng",
+                      "Jackson",
+                      "Emily",
+                      "Michael",
+                      "Olivia",
+                      "James",
+                      "Charlotte",
+                    ].map((name, i) => (
+                      <span
+                        key={i}
+                        className="mx-6 text-gray-300 font-medium text-lg"
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Footer */}
         <footer className="py-12 px-4 border-t border-purple-500/20 bg-black/50 backdrop-blur-sm">
           <div className="max-w-6xl mx-auto">
