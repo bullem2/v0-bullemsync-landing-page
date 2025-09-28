@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Instagram, Music, Facebook, ChevronDown, Play, Pause, Volume2 } from "lucide-react"
 import Image from "next/image"
-import Head from "next/head"
 
 const TikTokIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -133,25 +132,6 @@ export default function BullemsyncLanding() {
 
   return (
     <>
-     <Head>
-        <title>Bullemsync - Revolutionizing Music Streaming & Trading Platform</title>
-        <meta
-          name="description"
-          content="Bullemsync transforms music into assets. Stream, trade, and earn $BST tokens. Join the future of music economy where listeners, artists, and traders thrive together."
-        />
-        <meta
-          name="keywords"
-          content="music streaming, crypto music, NFT songs, music trading, $BST token, blockchain music, earn from streaming"
-        />
-        <meta property="og:title" content="Bullemsync - Where Sound Becomes Assets" />
-        <meta
-          property="og:description"
-          content="Revolutionary platform turning music streams into tradable assets. Join the waitlist today!"
-        />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://bullemsync.com" />
-      </Head>
-
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
         {/* Animated Background */}
         <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/10 to-black pointer-events-none" />
@@ -226,10 +206,10 @@ export default function BullemsyncLanding() {
                 </div>
               </div>
               
-{/* Main Title with Gradient */}
-<h1 className="text-3xl sm:text-7xl md:text-9xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
-  BULLEMSYNC
-</h1>
+              {/* Main Title with Gradient */}
+              <h1 className="text-3xl sm:text-7xl md:text-9xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
+                BULLEMSYNC
+              </h1>
 
               
               {/* Animated Underline */}
