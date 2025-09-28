@@ -154,11 +154,7 @@ export default function BullemsyncLanding() {
       </Head>
 
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
-        {/* Audio Element */}
-        <audio ref={audioRef} loop>
-          <source src="/audio/ambient.mp3" type="audio/mpeg" />
-        </audio>
-
+        
         {/* Animated Background */}
         <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/10 to-black pointer-events-none" />
         <div className="fixed inset-0 animate-pulse-slow">
