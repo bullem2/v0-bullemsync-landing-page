@@ -748,6 +748,17 @@ export default function BullemsyncLanding() {
   "Obinna Ezeh",
   "Musa Abubakar",
   "Hope Chukwu",
+    "Adeola Balogun",
+  "Nkosi Phakathi",
+  "Wanjiru Njoroge",
+  "Tosin Adebisi",
+  "Naledi Molefe",
+  "Chidera Obi",
+  "Trevor Williams",
+  "Amanda Brooks",
+  "Victor Udo",
+  "Helen Parker",
+
   "John Davies",
   "Rebecca Hughes",
 ].map((fullName, i) => {
