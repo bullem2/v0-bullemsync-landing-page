@@ -684,7 +684,7 @@ export default function BullemsyncLanding() {
                 </Button>
               </div>
 
-           {/* Live Counter */}
+         {/* Live Counter */}
 <div className="mt-8 p-4 bg-black/30 rounded-2xl border border-purple-500/20">
   <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
     <div className="flex items-center gap-2">
@@ -700,19 +700,32 @@ export default function BullemsyncLanding() {
   <div className="overflow-hidden relative mt-4">
     <div className="flex whitespace-nowrap animate-marquee">
       {[
-        "Chinonso", "Adebayo", "Zanele", "Thabo", "Mwangi", "Achieng",
-        "Jackson", "Emily", "Michael", "Olivia", "James", "Charlotte"
-      ].map((name, i) => (
-        <span
-          key={i}
-          className="mx-6 text-gray-300 font-medium text-lg"
-        >
-          {name}
-        </span>
-      ))}
+        "Chinonso",
+        "Adebayo",
+        "Zanele",
+        "Thabo",
+        "Mwangi",
+        "Achieng",
+        "Jackson",
+        "Emily",
+        "Michael",
+        "Olivia",
+        "James",
+        "Charlotte",
+      ].map((name, i) => {
+        return (
+          <span
+            key={i}
+            className="mx-6 text-gray-300 font-medium text-lg"
+          >
+            {name}
+          </span>
+        )
+      })}
     </div>
   </div>
 </div>
+
 
 
         {/* Footer */}
