@@ -210,7 +210,6 @@ export default function BullemsyncLanding() {
               <h1 className="text-3xl sm:text-7xl md:text-9xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
                 BULLEMSYNC
               </h1>
-
               
               {/* Animated Underline */}
               <div className="w-48 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mt-6 rounded-full animate-pulse" />
@@ -244,7 +243,7 @@ export default function BullemsyncLanding() {
             </div>
           </div>
 
-            {/* Scroll Indicator */}
+          {/* Scroll Indicator */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
             <div className="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-pulse" />
@@ -360,17 +359,15 @@ export default function BullemsyncLanding() {
                     <p className="text-gray-300 leading-relaxed text-lg">
                       {role.content}
                     </p>
-
-                        
+                    
                     {/* Interactive Element */}
                     <div className="mt-6 flex items-center justify-between">
-                      <span className="text-purple-400 text-sm font-semibold"> →</span>
+                      <span className="text-purple-400 text-sm font-semibold">Learn More →</span>
                       <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <span className="text-white text-lg">+</span>
                       </div>
                     </div>
                   </div>
-                
                   
                   {/* Hover Glow Effect */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 via-cyan-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:via-cyan-500/5 group-hover:to-purple-500/10 transition-all duration-500" />
@@ -430,7 +427,7 @@ export default function BullemsyncLanding() {
                           platform that fairly rewards all participants in the music ecosystem.
                         </p>
                         <p>
-                          After months of development and testing, we are ready to launched the world's first music trading platform and it's  quickly gaining
+                          After months of development and testing, we are ready to launch the world's first music trading platform and it's quickly gaining
                           traction among independent artists and music traders. Today, we're proud to be hosting a growing community of
                           creators and listeners who are pioneering a new era in music consumption and ownership.
                         </p>
@@ -490,8 +487,7 @@ export default function BullemsyncLanding() {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 text-green-400 drop-shadow-[0_0_10px_#22c55e]">
-
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 text-green-400 drop-shadow-[0_0_10px_#22c55e]">
                 Artist Spotlight
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -526,7 +522,7 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-        {/* FAQ Section - Improved from Old Version */}
+        {/* FAQ Section */}
         <section className="py-20 px-4 bg-black/95 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-cyan-900/10" />
           
@@ -591,60 +587,62 @@ export default function BullemsyncLanding() {
             </div>
           </div>
         </section>
-{/* Interactive Music Puzzle */}
-<section className="py-20 relative">
-  <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
-  
-  <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-transparent bg-gradient-to-r from-cyan-400 to-[#22c55e] bg-clip-text drop-shadow-[0_0_10px_#22c55e]">
-      Unlock the Future
-    </h3>
 
-    <div className="flex justify-center space-x-4 mb-8">
-      {[0, 1, 2].map((padIndex) => (
-        <button
-          key={padIndex}
-          onClick={() => handlePadClick(padIndex)}
-          className={`w-20 h-20 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
-            activePads.includes(padIndex)
-              ? "bg-gradient-to-r from-[#22c55e] to-cyan-400 border-[#22c55e] animate-pulse shadow-lg shadow-[#22c55e]/40"
-              : "border-[#22c55e]/30 hover:border-[#22c55e]/60"
-          }`}
-        >
-          <div className="w-full h-full flex items-center justify-center">
-            <div
-              className={`w-8 h-8 rounded-full ${
-                activePads.includes(padIndex) 
-                  ? "bg-white" 
-                  : "bg-gradient-to-r from-[#22c55e]/30 to-cyan-400/30"
-              }`}
-            />
+        {/* Interactive Music Puzzle */}
+        <section className="py-20 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
+          
+          <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-transparent bg-gradient-to-r from-cyan-400 to-[#22c55e] bg-clip-text drop-shadow-[0_0_10px_#22c55e]">
+              Unlock the Future
+            </h3>
+
+            <div className="flex justify-center space-x-4 mb-8">
+              {[0, 1, 2].map((padIndex) => (
+                <button
+                  key={padIndex}
+                  onClick={() => handlePadClick(padIndex)}
+                  className={`w-20 h-20 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
+                    activePads.includes(padIndex)
+                      ? "bg-gradient-to-r from-[#22c55e] to-cyan-400 border-[#22c55e] animate-pulse shadow-lg shadow-[#22c55e]/40"
+                      : "border-[#22c55e]/30 hover:border-[#22c55e]/60"
+                  }`}
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div
+                      className={`w-8 h-8 rounded-full ${
+                        activePads.includes(padIndex) 
+                          ? "bg-white" 
+                          : "bg-gradient-to-r from-[#22c55e]/30 to-cyan-400/30"
+                      }`}
+                    />
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {puzzleUnlocked && (
+              <div className="mb-8 animate-fade-in">
+                <p className="text-xl text-[#22c55e] drop-shadow-[0_0_10px_#22c55e] mb-6 font-semibold">
+                  You've unlocked the future of music!
+                </p>
+                <Button
+                  className="bg-gradient-to-r from-[#22c55e] to-cyan-500 text-white hover:from-[#22c55e] hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-lg shadow-[#22c55e]/30"
+                  onClick={() => window.open('https://forms.gle/8f2o9aFvqrKn7pwU9', '_blank')}
+                >
+                  Join the Revolution
+                </Button>
+              </div>
+            )}
+
+            {!puzzleUnlocked && (
+              <p className="text-gray-400">
+                Click the pads in the right order to unlock something special...
+              </p>
+            )}
           </div>
-        </button>
-      ))}
-    </div>
+        </section>
 
-    {puzzleUnlocked && (
-      <div className="mb-8 animate-fade-in">
-        <p className="text-xl text-[#22c55e] drop-shadow-[0_0_10px_#22c55e] mb-6 font-semibold">
-          You've unlocked the future of music!
-        </p>
-        <Button
-          className="bg-gradient-to-r from-[#22c55e] to-cyan-500 text-white hover:from-[#22c55e] hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-lg shadow-[#22c55e]/30"
-          onClick={() => window.open('https://forms.gle/8f2o9aFvqrKn7pwU9', '_blank')}
-        >
-          Join the Revolution
-        </Button>
-      </div>
-    )}
-
-    {!puzzleUnlocked && (
-      <p className="text-gray-400">
-        Click the pads in the right order to unlock something special...
-      </p>
-    )}
-  </div>
-</section>
         {/* CTA Section */}
         <section className="py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
@@ -684,37 +682,39 @@ export default function BullemsyncLanding() {
                 {/* Auto-scrolling Names */}
                 <div className="overflow-hidden relative mt-4">
                   <div className="flex whitespace-nowrap animate-marquee">
-      {[
-  "Chinonso Okeke",
-  "Adebayo Johnson",
-  "Zanele Khumalo",
-  "Thabo Mokoena",
-  "Mwangi Kamau",
-  "Achieng Otieno",
-  "Jackson Smith",
-  "Emily Carter",
-  "Michael Brown",
-  "Olivia Johnson",
-  "James Thompson",
-  "Charlotte Davis",
-].map((fullName, i) => {
-  const statuses = ["joined", "enlisted", "enrolled"];
-  const status = statuses[Math.floor(Math.random() * statuses.length)];
+                    {[
+                      "Chinonso Okeke",
+                      "Adebayo Johnson",
+                      "Zanele Khumalo",
+                      "Thabo Mokoena",
+                      "Mwangi Kamau",
+                      "Achieng Otieno",
+                      "Jackson Smith",
+                      "Emily Carter",
+                      "Michael Brown",
+                      "Olivia Johnson",
+                      "James Thompson",
+                      "Charlotte Davis",
+                    ].map((fullName, i) => {
+                      const statuses = ["joined", "enlisted", "enrolled"];
+                      const status = statuses[Math.floor(Math.random() * statuses.length)];
 
-  return (
-    <span
-      key={i}
-      className="mx-6 text-gray-300 font-medium text-lg"
-    >
-      {fullName} {status}
-    </span>
-                    ))}
+                      return (
+                        <span
+                          key={i}
+                          className="mx-6 text-gray-300 font-medium text-lg"
+                        >
+                          {fullName} {status}
+                        </span>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
         {/* Footer */}
         <footer className="py-12 px-4 border-t border-purple-500/20 bg-black/50 backdrop-blur-sm">
           <div className="max-w-6xl mx-auto">
@@ -728,7 +728,7 @@ export default function BullemsyncLanding() {
                   </span>
                 </div>
                 <p className="text-gray-400 text-sm">
-                  Revolutionizing the music industry through advance technology and community-driven innovation.
+                  Revolutionizing the music industry through advanced technology and community-driven innovation.
                 </p>
               </div>
 
