@@ -754,9 +754,9 @@ export default function BullemsyncLanding() {
     <span
       key={i}
       className="mx-6 text-gray-300 font-medium text-lg"
-    >
-      {fullName} {status}
-    </span>
+    <span className="text-sm font-medium">
+  {fullName} {status}
+</span>
                     ))}
                   </div>
                 </div>
