@@ -133,51 +133,57 @@ export default function BullemsyncLanding() {
 
   return (
     <>
-      <Head>
+     <Head>
         <title>Bullemsync - Revolutionizing Music Streaming & Trading Platform</title>
-        <meta name="description" content="Bullemsync transforms music into assets. Stream, trade, and earn $BST tokens. Join the future of music economy where listeners, artists, and traders thrive together." />
-        <meta name="keywords" content="music streaming, crypto music, NFT songs, music trading, $BST token, blockchain music, earn from streaming" />
+        <meta
+          name="description"
+          content="Bullemsync transforms music into assets. Stream, trade, and earn $BST tokens. Join the future of music economy where listeners, artists, and traders thrive together."
+        />
+        <meta
+          name="keywords"
+          content="music streaming, crypto music, NFT songs, music trading, $BST token, blockchain music, earn from streaming"
+        />
         <meta property="og:title" content="Bullemsync - Where Sound Becomes Assets" />
-        <meta property="og:description" content="Revolutionary platform turning music streams into tradable assets. Join the waitlist today!" />
+        <meta
+          property="og:description"
+          content="Revolutionary platform turning music streams into tradable assets. Join the waitlist today!"
+        />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://bullemsync.com" />
       </Head>
 
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
-        
         {/* Animated Background */}
         <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/10 to-black pointer-events-none" />
         <div className="fixed inset-0 animate-pulse-slow">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/0 via-blue-900/10 to-black" />
         </div>
-{/* Floating Particles (Stars) */}
-<div className="fixed inset-0 pointer-events-none">
-  {[...Array(50)].map((_, i) => {
-    // Randomize star colors (soft whites, blues, yellows)
-    const starColors = ["#ffffff", "#ffe9c4", "#d4fbff", "#fff5e1", "#f0f8ff"];
-    const color = starColors[Math.floor(Math.random() * starColors.length)];
 
-    // Randomize star size (tiny dots to mimic depth)
-    const size = Math.random() * 2 + 1; // between 1px and 3px
+        {/* Floating Particles (Stars) */}
+        <div className="fixed inset-0 pointer-events-none">
+          {[...Array(50)].map((_, i) => {
+            const starColors = ["#ffffff", "#ffe9c4", "#d4fbff", "#fff5e1", "#f0f8ff"]
+            const color = starColors[Math.floor(Math.random() * starColors.length)]
+            const size = Math.random() * 2 + 1 // between 1px and 3px
 
-    return (
-      <div
-        key={i}
-        className="absolute rounded-full animate-float"
-        style={{
-          width: `${size}px`,
-          height: `${size}px`,
-          backgroundColor: color,
-          opacity: Math.random() * 0.8 + 0.2, // some stars dimmer than others
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 10}s`,
-          animationDuration: `${20 + Math.random() * 20}s`,
-        }}
-      />
-    );
-  })}
-</div>
+            return (
+              <div
+                key={i}
+                className="absolute rounded-full animate-float"
+                style={{
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  backgroundColor: color,
+                  opacity: Math.random() * 0.8 + 0.2,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 10}s`,
+                  animationDuration: `${20 + Math.random() * 20}s`,
+                }}
+              />
+            )
+          })}
+        </div>
 
         {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-purple-500/20">
