@@ -559,21 +559,11 @@ export default function BullemsyncLanding() {
                   </h2>
                 </div>
                 <p className="text-gray-400 text-sm">
-                  Revolutionizing the music industry through blockchain technology and community-driven innovation.
+                  Revolutionizing the music industry through advance technology and community-driven innovation.
                 </p>
               </div>
 
-              {/* Links */}
-              <div>
-                <h3 className="font-semibold text-white mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="/about" className="hover:text-purple-400 transition-colors">About</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors">Whitepaper</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors">Roadmap</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors">Contact</a></li>
-                </ul>
-              </div>
-
+        
               {/* Social */}
               <div>
                 <h3 className="font-semibold text-white mb-4">Connect</h3>
