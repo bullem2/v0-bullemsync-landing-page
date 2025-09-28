@@ -666,7 +666,7 @@ export default function BullemsyncLanding() {
           
           <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
             <div className="bg-gradient-to-br from-purple-900/30 to-cyan-900/20 rounded-3xl border border-purple-500/30 p-12 backdrop-blur-sm">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Ready to Revolutionize Music?
               </h2>
               
