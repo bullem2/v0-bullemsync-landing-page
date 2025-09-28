@@ -489,7 +489,8 @@ export default function BullemsyncLanding() {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-lime-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 text-green-400 drop-shadow-[0_0_10px_#22c55e]">
+
                 Artist Spotlight
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
