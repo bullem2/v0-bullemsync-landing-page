@@ -461,7 +461,7 @@ export default function BullemsyncLanding() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="bg-gray-800/50 p-4 rounded-lg">
                             <h3 className="font-medium text-white mb-2">General Inquiries</h3>
-                            <p className="text-gray-400">info@bullemsync.com</p>
+                            <p className="text-gray-400">bullemdigitallab@gmail.com</p>
                           </div>
                           <div className="bg-gray-800/50 p-4 rounded-lg">
                             <h3 className="font-medium text-white mb-2">Artist Relations</h3>
