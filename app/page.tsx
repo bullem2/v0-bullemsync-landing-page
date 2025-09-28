@@ -553,7 +553,8 @@ export default function BullemsyncLanding() {
               <div className="md:col-span-2">
                 <div className="flex items-center gap-4 mb-4">
                   <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={50} height={50} />
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+               <span className="text-xl font-bold text-green-400 drop-shadow-[0_0_6px_#00ff00]">
+
                     BULLEMSYNC
                   </h2>
                 </div>
