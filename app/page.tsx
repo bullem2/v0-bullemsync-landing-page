@@ -473,7 +473,7 @@ export default function BullemsyncLanding() {
                           </div>
                           <div className="bg-gray-800/50 p-4 rounded-lg">
                             <h3 className="font-medium text-white mb-2">Partnerships</h3>
-                            <p className="text-gray-400">partnerships@bullemsync.com</p>
+                            <p className="text-gray-400">bullemdigitallab@gmail.com</p>
                           </div>
                         </div>
                       </div>
