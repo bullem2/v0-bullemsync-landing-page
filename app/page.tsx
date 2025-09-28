@@ -361,15 +361,7 @@ export default function BullemsyncLanding() {
                     <p className="text-gray-300 leading-relaxed text-lg">
                       {role.content}
                     </p>
-                    
-                    {/* Interactive Element */}
-                    <div className="mt-6 flex items-center justify-between">
-                      <span className="text-purple-400 text-sm font-semibold">Learn More →</span>
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span className="text-white text-lg">+</span>
-                      </div>
-                    </div>
-                  </div>
+                
                   
                   {/* Hover Glow Effect */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 via-cyan-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:via-cyan-500/5 group-hover:to-purple-500/10 transition-all duration-500" />
