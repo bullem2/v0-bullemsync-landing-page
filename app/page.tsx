@@ -220,10 +220,11 @@ export default function BullemsyncLanding() {
                 </div>
               </div>
               
-              {/* Main Title with Gradient */}
-              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
-                BULLEMSYNC
-              </h1>
+            {/* Main Title with Gradient */}
+<h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
+  BULLEMSYNC
+</h1>
+
               
               {/* Animated Underline */}
               <div className="w-48 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mt-6 rounded-full animate-pulse" />
