@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
@@ -26,6 +26,7 @@ export default function BullemsyncLanding() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
   const faqSliderRef = useRef<HTMLDivElement>(null)
 
@@ -120,7 +121,6 @@ export default function BullemsyncLanding() {
     }
   }
 
-
   const handleFAQScroll = (direction: "left" | "right") => {
     if (faqSliderRef.current) {
       const scrollAmount = faqSliderRef.current.clientWidth
@@ -173,15 +173,11 @@ export default function BullemsyncLanding() {
             <div className="flex items-center gap-3">
               <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={40} height={40} />
               <span className="text-xl font-bold text-green-400 drop-shadow-[0_0_6px_#00ff00]">
-
                 BULLEMSYNC
               </span>
             </div>
             
             <div className="flex items-center gap-6">
-              <a href="/about" className="text-gray-300 hover:text-purple-400 transition-colors font-medium">
-                About
-              </a>
               <Button 
                 onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
                 className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
@@ -213,8 +209,7 @@ export default function BullemsyncLanding() {
               </div>
               
               {/* Main Title with Gradient */}
-             <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
-
+              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-4 text-green-400 drop-shadow-[0_0_12px_#00ff00]">
                 BULLEMSYNC
               </h1>
               
@@ -254,6 +249,77 @@ export default function BullemsyncLanding() {
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <div className="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-pulse" />
+            </div>
+          </div>
+        </section>
+
+        {/* Music Investment Section */}
+        <section className="py-20 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-900/5 to-black" />
+          
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Image Side */}
+              <div className="relative group">
+                <div className="relative rounded-3xl overflow-hidden border-2 border-blue-500/30 shadow-2xl shadow-blue-500/20">
+                  <Image
+                    src="/images/singer_stage_3.jpg"
+                    alt="Artist performing on stage"
+                    width={600}
+                    height={600}
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-blue-900/10" />
+                </div>
+                
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-xl opacity-60 animate-pulse" />
+                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full blur-xl opacity-40 animate-pulse delay-1000" />
+              </div>
+
+              {/* Content Side */}
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Turn Your Love for Music Into Profit
+                  </h2>
+                  
+                  <p className="text-2xl font-semibold text-white mb-8 leading-relaxed">
+                    <strong>Invest in your favorite artists and grow with every beat.</strong>
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    With Bullemsync, your passion for music is no longer just about listening — it's about earning. For the first time, fans can invest directly in their favorite artists' songs, turning every stream into an opportunity for financial growth.
+                  </p>
+                  
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    Imagine discovering a track you love today, and tomorrow it's not only topping charts but also growing your wallet. Turn your love for music into profit — invest in your favorite artists and grow with every beat.
+                  </p>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="text-center p-4 bg-blue-900/20 rounded-xl border border-blue-500/20">
+                    <div className="text-2xl font-bold text-cyan-400">100+</div>
+                    <div className="text-sm text-gray-400">Artists Available</div>
+                  </div>
+                  <div className="text-center p-4 bg-purple-900/20 rounded-xl border border-purple-500/20">
+                    <div className="text-2xl font-bold text-purple-400">24/7</div>
+                    <div className="text-sm text-gray-400">Trading Market</div>
+                  </div>
+                </div>
+
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-8 py-6 text-lg rounded-2xl transition-all duration-300 group"
+                  onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
+                >
+                  <span className="relative z-10">Start Investing Today</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -309,6 +375,110 @@ export default function BullemsyncLanding() {
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 via-cyan-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:via-cyan-500/5 group-hover:to-purple-500/10 transition-all duration-500" />
                 </div>
               ))}
+            </div>
+
+            {/* Learn More Dropdown */}
+            <div className="mt-16 max-w-4xl mx-auto">
+              <div className="border border-purple-500/30 rounded-2xl bg-gradient-to-br from-purple-900/20 to-cyan-900/10 backdrop-blur-sm">
+                <button
+                  onClick={() => setShowAbout(!showAbout)}
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-purple-500/10 transition-colors rounded-2xl"
+                >
+                  <span className="text-xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text">
+                    Learn More
+                  </span>
+                  <ChevronDown 
+                    className={`w-6 h-6 text-purple-400 transition-transform duration-300 ${
+                      showAbout ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                
+                {showAbout && (
+                  <div className="p-6 border-t border-purple-500/20 animate-fade-in">
+                    <div className="space-y-6 text-gray-300">
+                      <div className="space-y-4">
+                        <h2 className="text-xl font-semibold text-white">About Bullemsync</h2>
+                        <p>
+                          Bullemsync is a next-generation music and trading platform designed to revolutionize how music is
+                          experienced, valued, and monetized. At our core, we empower artists, traders, and listeners to
+                          participate in a dynamic digital ecosystem where every song is an asset, every play has impact, and
+                          every user can earn.
+                        </p>
+                        <p>
+                          We're not just a streaming service — we're building an economy around music. Songs on Bullemsync are
+                          tradable, each with a unique energy signature, trade color identity, and earning potential. Artists
+                          maintain control and transparency over their content. Traders can speculate and earn through song
+                          performance. Listeners can mine value by simply enjoying music or curating powerful Radio Channels.
+                        </p>
+                        <p>
+                          Our mission is to democratize digital music ownership, protect creative integrity, and unlock new
+                          financial opportunities across borders. With immersive design, real-time metrics, and in-app currency
+                          (BST), Bullemsync blends innovation, community, and creativity into one seamless experience.
+                        </p>
+                        <p>
+                          Join us as we reshape the future of music — one beat, one trade, one play at a time.
+                        </p>
+                      </div>
+
+                      <div className="space-y-4">
+                        <h2 className="text-xl font-semibold text-white">Our Story</h2>
+                        <p>
+                          Founded in 2023, Bullemsync emerged from a shared vision to transform the music industry. Our founders,
+                          a diverse team of music enthusiasts, blockchain experts, and tech innovators, recognized the need for a
+                          platform that fairly rewards all participants in the music ecosystem.
+                        </p>
+                        <p>
+                          After months of development and testing, we launched our beta platform in early 2023, quickly gaining
+                          traction among independent artists and music traders. Today, we're proud to host a growing community of
+                          creators and listeners who are pioneering a new era in music consumption and ownership.
+                        </p>
+                      </div>
+
+                      <div className="space-y-4">
+                        <h2 className="text-xl font-semibold text-white">Our Mission</h2>
+                        <p>
+                          At Bullemsync, we're on a mission to democratize the music industry by creating a fair, transparent, and
+                          rewarding platform for artists, traders, and listeners alike. We believe in the power of music to
+                          connect people across boundaries and are committed to building technology that enhances this connection
+                          while ensuring creators are properly compensated for their work.
+                        </p>
+                        <p>
+                          Through our innovative trading system and mining rewards, we're redefining what it means to support
+                          artists and engage with music in the digital age. Our goal is to create a sustainable ecosystem where
+                          creativity thrives and everyone benefits from the value they contribute.
+                        </p>
+                      </div>
+
+                      <div className="space-y-4">
+                        <h2 className="text-xl font-semibold text-white">Contact Us</h2>
+                        <p>
+                          Have questions, feedback, or just want to say hello? We'd love to hear from you! Reach out to our team
+                          through any of the channels below:
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="bg-gray-800/50 p-4 rounded-lg">
+                            <h3 className="font-medium text-white mb-2">General Inquiries</h3>
+                            <p className="text-gray-400">info@bullemsync.com</p>
+                          </div>
+                          <div className="bg-gray-800/50 p-4 rounded-lg">
+                            <h3 className="font-medium text-white mb-2">Artist Relations</h3>
+                            <p className="text-gray-400">artists@bullemsync.com</p>
+                          </div>
+                          <div className="bg-gray-800/50 p-4 rounded-lg">
+                            <h3 className="font-medium text-white mb-2">Support</h3>
+                            <p className="text-gray-400">support@bullemsync.com</p>
+                          </div>
+                          <div className="bg-gray-800/50 p-4 rounded-lg">
+                            <h3 className="font-medium text-white mb-2">Partnerships</h3>
+                            <p className="text-gray-400">partnerships@bullemsync.com</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </section>
@@ -493,15 +663,6 @@ export default function BullemsyncLanding() {
                 >
                   Join Waitlist Now
                 </Button>
-                
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-12 py-6 border-green-400 text-green-400 hover:bg-green-400/10 font-semibold rounded-2xl text-lg transition-all duration-300"
-                  onClick={() => window.open("/about", "_self")}
-                >
-                  Learn More
-                </Button>
               </div>
 
               {/* Live Counter */}
@@ -526,17 +687,15 @@ export default function BullemsyncLanding() {
               <div className="md:col-span-2">
                 <div className="flex items-center gap-4 mb-4">
                   <Image src="/images/bullemsync-logo.png" alt="Bullemsync Logo" width={50} height={50} />
-               <span className="text-xl font-bold text-green-400 drop-shadow-[0_0_6px_#00ff00]">
-
+                  <span className="text-xl font-bold text-green-400 drop-shadow-[0_0_6px_#00ff00]">
                     BULLEMSYNC
-                  </h2>
+                  </span>
                 </div>
                 <p className="text-gray-400 text-sm">
                   Revolutionizing the music industry through advance technology and community-driven innovation.
                 </p>
               </div>
 
-        
               {/* Social */}
               <div>
                 <h3 className="font-semibold text-white mb-4">Connect</h3>
