@@ -120,16 +120,6 @@ export default function BullemsyncLanding() {
     }
   }
 
-  const toggleAudio = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause()
-      } else {
-        audioRef.current.play()
-      }
-      setIsPlaying(!isPlaying)
-    }
-  }
 
   const handleFAQScroll = (direction: "left" | "right") => {
     if (faqSliderRef.current) {
