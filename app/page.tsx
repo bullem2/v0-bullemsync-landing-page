@@ -237,6 +237,13 @@ export default function BullemsyncLanding() {
                 <span className="relative z-10">Join the Revolution</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </Button>
+
+              {/* Scroll Indicator */}
+<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-50">
+  <div className="w-6 h-10 border-2 border-neon-green rounded-full flex justify-center">
+    <div className="w-1 h-3 bg-neon-green rounded-full mt-2 animate-pulse" />
+  </div>
+</div>
               
               {/* Waitlist Counter */}
               <div className="mt-6 text-sm text-gray-400">
@@ -244,14 +251,6 @@ export default function BullemsyncLanding() {
               </div>
             </div>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-pulse" />
-            </div>
-          </div>
-        </section>
 
         {/* Music Investment Section */}
         <section className="py-20 relative">
