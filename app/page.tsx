@@ -699,19 +699,20 @@ export default function BullemsyncLanding() {
                 <div className="overflow-hidden relative mt-4">
                   <div className="flex whitespace-nowrap animate-marquee">
                     {[
-                      "Chinonso",
-                      "Adebayo",
-                      "Zanele", 
-                      "Thabo",
-                      "Mwangi",
-                      "Achieng",
-                      "Jackson",
-                      "Emily",
-                      "Michael",
-                      "Olivia",
-                      "James",
-                      "Charlotte",
-                    ].map((name, i) => (
+                      "Chinonso Okeke",
+        "Adebayo Johnson",
+        "Zanele Khumalo",
+        "Thabo Mokoena",
+        "Mwangi Kamau",
+        "Achieng Otieno",
+        "Jackson Smith",
+        "Emily Carter",
+        "Michael Brown",
+        "Olivia Johnson",
+        "James Thompson",
+        "Charlotte Davis",
+      ].map((fullName, i) => {
+        const statuses = ["joined", "enlisted", "enrolled"];
                       <span
                         key={i}
                         className="mx-6 text-gray-300 font-medium text-lg"
