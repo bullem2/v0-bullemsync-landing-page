@@ -424,13 +424,13 @@ export default function BullemsyncLanding() {
                       <div className="space-y-4">
                         <h2 className="text-xl font-semibold text-white">Our Story</h2>
                         <p>
-                          Founded in 2023, Bullemsync emerged from a shared vision to transform the music industry. Our founders,
+                          Founded in 2025, Bullemsync emerged from a shared vision to transform the music industry. Our founders,
                           a diverse team of music enthusiasts, blockchain experts, and tech innovators, recognized the need for a
                           platform that fairly rewards all participants in the music ecosystem.
                         </p>
                         <p>
-                          After months of development and testing, we launched our beta platform in early 2023, quickly gaining
-                          traction among independent artists and music traders. Today, we're proud to host a growing community of
+                          After months of development and testing, we are ready to launched the world's first music trading platform and it's  quickly gaining
+                          traction among independent artists and music traders. Today, we're proud to be hosting a growing community of
                           creators and listeners who are pioneering a new era in music consumption and ownership.
                         </p>
                       </div>
