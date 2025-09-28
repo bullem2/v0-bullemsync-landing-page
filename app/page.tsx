@@ -591,12 +591,12 @@ export default function BullemsyncLanding() {
           </div>
         </section>
 
-   {/* Interactive Music Puzzle */}
+ {/* Interactive Music Puzzle */}
 <section className="py-20 relative">
   <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/20" />
-
+  
   <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-[#39FF14] drop-shadow-[0_0_10px_#39FF14]">
+    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-transparent bg-gradient-to-r from-cyan-400 to-[#22c55e] bg-clip-text drop-shadow-[0_0_10px_#22c55e]">
       Unlock the Future
     </h3>
 
@@ -607,8 +607,8 @@ export default function BullemsyncLanding() {
           onClick={() => handlePadClick(padIndex)}
           className={`w-20 h-20 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
             activePads.includes(padIndex)
-              ? "bg-[#39FF14] border-[#39FF14] animate-pulse shadow-lg shadow-[#39FF14]/50"
-              : "border-[#39FF14]/40 hover:border-[#39FF14]/70"
+              ? "bg-gradient-to-r from-[#22c55e] to-cyan-400 border-[#22c55e] animate-pulse shadow-lg shadow-[#22c55e]/50"
+              : "border-[#22c55e]/30 hover:border-[#22c55e]/60"
           }`}
         >
           <div className="w-full h-full flex items-center justify-center">
@@ -616,7 +616,7 @@ export default function BullemsyncLanding() {
               className={`w-8 h-8 rounded-full ${
                 activePads.includes(padIndex) 
                   ? "bg-white" 
-                  : "bg-[#39FF14]/20"
+                  : "bg-gradient-to-r from-[#22c55e]/30 to-cyan-400/30"
               }`}
             />
           </div>
@@ -626,11 +626,11 @@ export default function BullemsyncLanding() {
 
     {puzzleUnlocked && (
       <div className="mb-8 animate-fade-in">
-        <p className="text-xl text-[#39FF14] drop-shadow-[0_0_10px_#39FF14] mb-6 font-semibold">
+        <p className="text-xl text-[#22c55e] drop-shadow-[0_0_10px_#22c55e] mb-6 font-semibold">
           You've unlocked the future of music!
         </p>
         <Button
-          className="bg-[#39FF14] hover:bg-[#32e313] text-black px-8 py-4 text-lg font-semibold shadow-[0_0_15px_#39FF14]"
+          className="bg-[#22c55e] hover:bg-[#1ea34d] text-white shadow-[0_0_10px_#22c55e] px-8 py-4 text-lg font-semibold transition-all"
           onClick={() => window.open("https://forms.gle/8f2o9aFvqrKn7pwU9", "_blank")}
         >
           Join the Revolution
@@ -639,7 +639,9 @@ export default function BullemsyncLanding() {
     )}
 
     {!puzzleUnlocked && (
-      <p className="text-gray-400">Click the pads in the right order to unlock something special...</p>
+      <p className="text-gray-400">
+        Click the pads in the right order to unlock something special...
+      </p>
     )}
   </div>
 </section>
