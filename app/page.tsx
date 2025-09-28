@@ -194,17 +194,8 @@ export default function BullemsyncLanding() {
 
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30" />
-          
-        
-            {isPlaying ? (
-              <Pause className="w-5 h-5 text-purple-300" />
-            ) : (
-              <Play className="w-5 h-5 text-purple-300" />
-            )}
-            <Volume2 className="absolute w-3 h-3 text-purple-200 opacity-0 group-hover:opacity-100 transition-opacity -top-1 -right-1" />
-          </button>
-
+          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30" />        
+    
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
             {/* Animated Logo */}
             <div className={`mb-8 transition-all duration-1000 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
