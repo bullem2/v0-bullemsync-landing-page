@@ -362,7 +362,7 @@ export default function BullemsyncLanding() {
                     
                     {/* Interactive Element */}
                     <div className="mt-6 flex items-center justify-between">
-                      <span className="text-purple-400 text-sm font-semibold">Learn More →</span>
+                      <span className="text-purple-400 text-sm font-semibold"> →</span>
                       <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <span className="text-white text-lg">+</span>
                       </div>
