@@ -196,11 +196,7 @@ export default function BullemsyncLanding() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30" />
           
-          {/* Audio Control */}
-          <button 
-            onClick={toggleAudio}
-            className="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-purple-600/20 backdrop-blur-sm border border-purple-400/30 flex items-center justify-center hover:bg-purple-600/30 transition-all duration-300 group"
-          >
+        
             {isPlaying ? (
               <Pause className="w-5 h-5 text-purple-300" />
             ) : (
